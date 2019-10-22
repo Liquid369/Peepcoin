@@ -115,6 +115,11 @@ private:
 	QAction *bleuDOGEAction;
 	QAction *bleuETHAction;
 	QAction *bleuUSDTAction;
+    QAction *tradesatoshiDOGEAction;
+    QAction *tradesatoshiETHAction;
+    QAction *tradesatoshiUSDTAction;
+    QAction *crex24BTCAction;
+    QAction *crex24ETHAction;
 	QAction *tradeOgreAction;
 	QAction *cpatexBTCAction;
 	QAction *cpatexDOGEAction;
@@ -210,6 +215,11 @@ private slots:
 	void bleuDOGEClicked();
 	void bleuETHClicked();
 	void bleuUSDTClicked();
+    void tradesatoshiDOGEClicked();
+	void tradesatoshiETHClicked();
+	void tradesatoshiUSDTClicked();
+    void crex24BTCClicked();
+	void crex24ETHClicked();
 	void tradeOgreClicked();
 	void cpatexBTCClicked();
 	void cpatexDOGEClicked();
