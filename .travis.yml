@@ -14,6 +14,9 @@ matrix:
         brew install boost@1.60; 
         brew link boost@1.60 -f; 
         brew upgrade wget;
+        wget -O protobuf.rb https://gist.githubusercontent.com/shlima/b64087606b2f7c9495fcb0bcb886b5be/raw/265e879f7971f80b4543f34179edaaaac3c08413/protobuf260.rb;
+        brew install ./protobuf.rb;
+        brew link protobuf -f;
         wget -O qt.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/a57d0deab976cd8dee32404abe73f63cc5fbd60d/Formula/qt.rb;
         brew install ./qt.rb;
         brew link qt -f; 
