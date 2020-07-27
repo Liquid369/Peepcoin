@@ -27,8 +27,8 @@ matrix:
         cd appscript/py-appscript/tags/py-appscript-1.0.0/;
         sudo python2.7 setup.py install;
         cd  ${TRAVIS_BUILD_DIR};
-        wget -O miniupnpc.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/miniupnpc.rb 
-        brew install ./miniupnpc.rb
+        wget -O miniupnpc.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/miniupnpc.rb;
+        brew install ./miniupnpc.rb;
     install: 
         cd  ${TRAVIS_BUILD_DIR};
         chmod 755 src/leveldb/build_detect_platform;
