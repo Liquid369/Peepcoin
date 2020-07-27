@@ -397,7 +397,8 @@ void BitcoinGUI::createActions()
 	connect(cpatexBTCAction, SIGNAL(triggered()), this, SLOT(cpatexBTCClicked()));
 	connect(cpatexLTCAction, SIGNAL(triggered()), this, SLOT(cpatexLTCClicked()));
 	connect(cpatexDOGEAction, SIGNAL(triggered()), this, SLOT(cpatexDOGEClicked()));
-	connect(otherExchangesAction, SIGNAL(triggered()), this, SLOT(otherExchangesClicked()));
+	
+    connect(otherExchangesAction, SIGNAL(triggered()), this, SLOT(otherExchangesClicked()));
 
 	connect(facebookAction, SIGNAL(triggered()), this, SLOT(facebookActionClicked()));
 	connect(twitterAction, SIGNAL(triggered()), this, SLOT(twitterActionClicked()));
@@ -678,6 +679,16 @@ void BitcoinGUI::tradeOgreBTCClicked()
 void BitcoinGUI::tradeOgreLTCClicked()
 {
 	QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/LTC-PCN"));
+}
+
+void BitcoinGUI::crex24BTCClicked()
+{
+	QDesktopServices::openUrl(QUrl("https://crex24.com/exchange/PCN-BTC"));
+}
+
+void BitcoinGUI::crex24ETHClicked()
+{
+	QDesktopServices::openUrl(QUrl("https://crex24.com/exchange/PCN-ETH"));
 }
 
 void BitcoinGUI::cpatexBTCClicked()

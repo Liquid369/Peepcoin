@@ -111,6 +111,7 @@ private:
     QAction *lockWalletAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
+    
 	QAction *tradeOgreBTCAction;
 	QAction *tradeOgreLTCAction;
 	QAction *cpatexBTCAction;
@@ -204,6 +205,7 @@ private slots:
 	void faq3Clicked();
 	void swapClicked();
 	void whitepaperClicked();
+
 	void tradeOgreBTCClicked();
 	void tradeOgreLTCClicked();
 	void cpatexBTCClicked();
