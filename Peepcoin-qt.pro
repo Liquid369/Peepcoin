@@ -443,7 +443,7 @@ isEmpty(MINIUPNPC_LIB_PATH) {
 }
 
 isEmpty(QRENCODE_INCLUDE_PATH) {
-    macx:QRENCODE_INCLUDE_PATH = /usr/local/include
+    macx:QRENCODE_INCLUDE_PATH = -I/usr/local/Cellar/qrencode/3.4.4/include
 }
 
 isEmpty(QRENCODE_LIB_PATH) {
