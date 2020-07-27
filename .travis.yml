@@ -14,9 +14,13 @@ matrix:
         brew install boost@1.60; 
         brew link boost@1.60 -f; 
         brew upgrade wget;
+        wget -O protobuf.rb https://gist.githubusercontent.com/shlima/b64087606b2f7c9495fcb0bcb886b5be/raw/265e879f7971f80b4543f34179edaaaac3c08413/protobuf260.rb;
+        brew install ./protobuf.rb;
+        brew link protobuf -f;
         wget -O qt.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/a57d0deab976cd8dee32404abe73f63cc5fbd60d/Formula/qt.rb;
         brew install ./qt.rb;
         brew link qt -f; 
+        echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> /Users/travis/.bash_profile
         brew install libqrencode; 
         git clone https://github.com/mattneub/appscript.git;
         cd appscript/py-appscript/tags/py-appscript-1.0.0/;
@@ -33,7 +37,7 @@ matrix:
         chmod 755 src/leveldb/build_detect_platform;
         qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1 Peepcoin-qt.pro;
     script: make;
-        export QTDIR=/usr/local/Cellar/qt/5.11.1;
+        # export QTDIR=/usr/local/Cellar/qt/5.11.1;
         cd  ${TRAVIS_BUILD_DIR};
         chmod -R 755 contrib;
         echo "Before dmg packaging";
@@ -129,4 +133,4 @@ deploy:
   on:
     repo: PXN-Foundation/Peepcoin
     tags: true
-    branch: QA
+    branch: patch-8
