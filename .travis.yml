@@ -16,7 +16,7 @@ matrix:
         brew upgrade wget;
         wget -O qt.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/a57d0deab976cd8dee32404abe73f63cc5fbd60d/Formula/qt.rb;
         brew install ./qt.rb;
-        brew link qt@5.11.1 -f; 
+        brew link qt@5.11 -f; 
         brew install libqrencode; 
         git clone https://github.com/mattneub/appscript.git;
         cd appscript/py-appscript/tags/py-appscript-1.0.0/;
