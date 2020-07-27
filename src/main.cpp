@@ -1021,7 +1021,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
     
     // Reward is 100% so divide by 20 to bring down to 5% - block ‭1969837‬ roughly end of November
-    if (nBestHeight >= 1969837)
+    if (nBestHeight >= 2422000)
     {
         nSubsidy = nCoinAge * (COIN_YEAR_REWARD / 20) * 33 / (365 * 33 + 8);
     }
