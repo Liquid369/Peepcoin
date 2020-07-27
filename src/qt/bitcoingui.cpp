@@ -444,7 +444,7 @@ void BitcoinGUI::createMenuBar()
 	QMenu *exchanges = appMenuBar->addMenu(tr("Exchanges"));	
 	exchanges->addSeparator();
 	exchanges->addAction(tradeOgreBTCAction);
-	exchanges->addAction(tradeOrgeLTCAction);
+	exchanges->addAction(tradeOgreLTCAction);
     	exchanges->addSeparator();
     	exchanges->addAction(cpatexBTCAction);
 	exchanges->addAction(cpatexLTCAction);
