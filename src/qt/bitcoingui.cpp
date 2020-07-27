@@ -681,16 +681,6 @@ void BitcoinGUI::tradeOgreLTCClicked()
 	QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/LTC-PCN"));
 }
 
-void BitcoinGUI::crex24BTCClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://crex24.com/exchange/PCN-BTC"));
-}
-
-void BitcoinGUI::crex24ETHClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://crex24.com/exchange/PCN-ETH"));
-}
-
 void BitcoinGUI::cpatexBTCClicked()
 {
 	QDesktopServices::openUrl(QUrl("https://c-patex.com/markets/pcnbtc"));
@@ -701,7 +691,7 @@ void BitcoinGUI::cpatexDOGEClicked()
 	QDesktopServices::openUrl(QUrl("https://c-patex.com/markets/pcndoge"));
 }
 
-void BitcoinGUI::cpatexLTClicked()
+void BitcoinGUI::cpatexLTCClicked()
 {
 	QDesktopServices::openUrl(QUrl("https://c-patex.com/markets/pcnltc"));
 }
