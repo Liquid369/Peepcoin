@@ -328,31 +328,14 @@ void BitcoinGUI::createActions()
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
 	
-	bleuBTCAction = new QAction(QIcon(":/icons/bleutrade"), tr("&Bleutrade - PCN/BTC"), this);
-    bleuBTCAction->setToolTip(tr("Buy Peepcoin with BTC on Bleutrade"));
-	bleuDOGEAction = new QAction(QIcon(":/icons/bleutrade"), tr("&Bleutrade - PCN/DOGE"), this);
-    bleuDOGEAction->setToolTip(tr("Buy Peepcoin with DOGE on Bleutrade"));
-	bleuETHAction = new QAction(QIcon(":/icons/bleutrade"), tr("&Bleutrade - PCN/ETH"), this);
-	bleuETHAction->setToolTip(tr("Buy Peepcoin with ETH on Bleutrade"));
-    bleuUSDTAction = new QAction(QIcon(":/icons/bleutrade"), tr("&Bleutrade - PCN/USDT"), this);
-    bleuUSDTAction->setToolTip(tr("Buy Peepcoin with USDT on Bleutrade"));
-    // adding tradesatoshi and crex24
-    tradesatoshiDOGEAction = new QAction(QIcon(":/icons/tradesatoshi"), tr("&Tradesatoshi - PCN/DOGE"), this);
-    tradesatoshiDOGEAction->setToolTip(tr("Buy Peepcoin with DOGE on Tradesatoshi"));
-	tradesatoshiETHAction = new QAction(QIcon(":/icons/tradesatoshi"), tr("&Tradesatoshi - PCN/ETH"), this);
-	tradesatoshiETHAction->setToolTip(tr("Buy Peepcoin with ETH on Tradesatoshi"));
-    tradesatoshiUSDTAction = new QAction(QIcon(":/icons/tradesatoshi"), tr("&Tradesatoshi - PCN/USDT"), this);
-    tradesatoshiUSDTAction->setToolTip(tr("Buy Peepcoin with USDT on Tradesatoshi"));
-    // crex24
-    crex24BTCAction = new QAction(QIcon(":/icons/crex24"), tr("&Crex24 - PCN/BTC"), this);
-    crex24BTCAction->setToolTip(tr("Buy Peepcoin with BTC on Crex24"));
-    crex24ETHAction = new QAction(QIcon(":/icons/crex24"), tr("&Crex24 - PCN/ETH"), this);
-	crex24ETHAction->setToolTip(tr("Buy Peepcoin with ETH on Crex24"));
-    // Old exising exchange
-	tradeOgreAction = new QAction(QIcon(":/icons/tradeogre"), tr("&TradeOgre - PCN/BTC"), this);
-    tradeOgreAction->setToolTip(tr("Buy Peepcoin for BTC on TradeOgre"));
+	tradeOgreBTCAction = new QAction(QIcon(":/icons/tradeogre"), tr("&TradeOgre - PCN/BTC"), this);
+    tradeOgreBTCAction->setToolTip(tr("Buy Peepcoin for BTC on TradeOgre"));
+	tradeOgreLTCAction = new QAction(QIcon(":/icons/tradeogre"), tr("&TradeOgre - PCN/LTC"), this);
+    tradeOgreLTCAction->setToolTip(tr("Buy Peepcoin for LTC on TradeOgre"));
 	cpatexBTCAction = new QAction(QIcon(":/icons/cpatex"), tr("&C-Patex - PCN/BTC"), this);
     cpatexBTCAction->setToolTip(tr("Buy Peepcoin for BTC on C-Patex"));
+	cpatexLTCAction = new QAction(QIcon(":/icons/cpatex"), tr("&C-Patex - PCN/BTC"), this);
+    cpatexLTCAction->setToolTip(tr("Buy Peepcoin for LTC on C-Patex"));
 	cpatexDOGEAction = new QAction(QIcon(":/icons/cpatex"), tr("&C-Patex - PCN/DOGE"), this);
 	cpatexDOGEAction->setToolTip(tr("Buy Peepcoin for DOGE on C-Patex"));
 	cryptopiaAction = new QAction(QIcon(":/icons/cryptopia"), tr("Cryptopia - Coming Soon"), this);
@@ -409,21 +392,10 @@ void BitcoinGUI::createActions()
     connect(signMessageAction, SIGNAL(triggered()), this, SLOT(gotoSignMessageTab()));
     connect(verifyMessageAction, SIGNAL(triggered()), this, SLOT(gotoVerifyMessageTab()));
 	
-	connect(bleuBTCAction, SIGNAL(triggered()), this, SLOT(bleuBTCClicked()));
-	connect(bleuDOGEAction, SIGNAL(triggered()), this, SLOT(bleuDOGEClicked()));
-    connect(bleuETHAction, SIGNAL(triggered()), this, SLOT(bleuETHClicked()));
-	connect(bleuUSDTAction, SIGNAL(triggered()), this, SLOT(bleuUSDTClicked()));
-
-    connect(tradesatoshiDOGEAction, SIGNAL(triggered()), this, SLOT(tradesatoshiDOGEClicked()));
-    connect(tradesatoshiETHAction, SIGNAL(triggered()), this, SLOT(tradesatoshiETHClicked()));
-	connect(tradesatoshiUSDTAction, SIGNAL(triggered()), this, SLOT(tradesatoshiUSDTClicked()));
-
-    connect(crex24BTCAction, SIGNAL(triggered()), this, SLOT(crex24BTCClicked()));
-	connect(crex24ETHAction, SIGNAL(triggered()), this, SLOT(crex24ETHClicked()));
-	
-    connect(tradeOgreAction, SIGNAL(triggered()), this, SLOT(tradeOgreClicked()));
-	
-    connect(cpatexBTCAction, SIGNAL(triggered()), this, SLOT(cpatexBTCClicked()));
+	connect(tradeOgreBTCAction, SIGNAL(triggered()), this, SLOT(tradeOgreBTCClicked()));
+	connect(tradeOgreLTCAction, SIGNAL(triggered()), this, SLOT(tradeOgreLTCClicked()));
+	connect(cpatexBTCAction, SIGNAL(triggered()), this, SLOT(cpatexBTCClicked()));
+	connect(cpatexLTCAction, SIGNAL(triggered()), this, SLOT(cpatexLTCClicked()));
 	connect(cpatexDOGEAction, SIGNAL(triggered()), this, SLOT(cpatexDOGEClicked()));
 	
     connect(otherExchangesAction, SIGNAL(triggered()), this, SLOT(otherExchangesClicked()));
@@ -469,19 +441,14 @@ void BitcoinGUI::createMenuBar()
     settings->addSeparator();
     settings->addAction(optionsAction);
 
-	QMenu *exchanges = appMenuBar->addMenu(tr("Exchanges"));
-	//exchanges->addAction(bleuBTCAction);
-	exchanges->addAction(tradesatoshiDOGEAction);
-	exchanges->addAction(tradesatoshiETHAction);
-	exchanges->addAction(tradesatoshiUSDTAction);	
+	QMenu *exchanges = appMenuBar->addMenu(tr("Exchanges"));	
 	exchanges->addSeparator();
-    exchanges->addAction(crex24BTCAction);
-	exchanges->addAction(crex24ETHAction);
-    exchanges->addSeparator();
-	exchanges->addAction(tradeOgreAction);
-    exchanges->addSeparator();
-    exchanges->addAction(cpatexBTCAction);
-    exchanges->addAction(cpatexDOGEAction);
+	exchanges->addAction(tradeOgreBTCAction);
+	exchanges->addAction(tradeOrgeLTCAction);
+    	exchanges->addSeparator();
+    	exchanges->addAction(cpatexBTCAction);
+	exchanges->addAction(cpatexLTCAction);
+    	exchanges->addAction(cpatexDOGEAction);
 	exchanges->addSeparator();
 	exchanges->addAction(otherExchangesAction);
     /*
@@ -704,44 +671,14 @@ void BitcoinGUI::whitepaperClicked()
 	QDesktopServices::openUrl(QUrl("https://dapscoin.com/whitepaper.pdf"));
 }
 
-void BitcoinGUI::bleuBTCClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://bleutrade.com/exchange/PCN/BTC"));
-}
-
-void BitcoinGUI::bleuDOGEClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://bleutrade.com/exchange/PCN/DOGE"));
-}
-
-void BitcoinGUI::bleuETHClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://bleutrade.com/exchange/PCN/ETH"));
-}
-
-void BitcoinGUI::bleuUSDTClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://bleutrade.com/exchange/PCN/USDT"));
-}
-
-void BitcoinGUI::tradesatoshiDOGEClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://tradesatoshi.com/Exchange/?market=PCN_DOGE"));
-}
-
-void BitcoinGUI::tradesatoshiETHClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://tradesatoshi.com/Exchange/?market=PCN_ETH"));
-}
-
-void BitcoinGUI::tradesatoshiUSDTClicked()
-{
-	QDesktopServices::openUrl(QUrl("https://tradesatoshi.com/Exchange/?market=PCN_USDT"));
-}
-
-void BitcoinGUI::tradeOgreClicked()
+void BitcoinGUI::tradeOgreBTCClicked()
 {
 	QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-PCN"));
+}
+
+void BitcoinGUI::tradeOgreLTCClicked()
+{
+	QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/LTC-PCN"));
 }
 
 void BitcoinGUI::crex24BTCClicked()
@@ -762,6 +699,11 @@ void BitcoinGUI::cpatexBTCClicked()
 void BitcoinGUI::cpatexDOGEClicked()
 {
 	QDesktopServices::openUrl(QUrl("https://c-patex.com/markets/pcndoge"));
+}
+
+void BitcoinGUI::cpatexLTClicked()
+{
+	QDesktopServices::openUrl(QUrl("https://c-patex.com/markets/pcnltc"));
 }
 
 void BitcoinGUI::otherExchangesClicked()
