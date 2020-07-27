@@ -11,8 +11,8 @@ Peepcoin is a free open source project derived from Bitcoin, with the goal of pr
 |:-----------|:-----------|
 | Block Spacing | `60 seconds` |
 | Stake Minimum Age | `2 hours` |
- | Stake Reward Height < 1969837 | `100% p.a` | 
- | Stake Reward Height >= 1969837 | `5% p.a` |
+ | Stake Reward Height < 2422000 | `100% p.a` | 
+ | Stake Reward Height >= 2422000 | `5% p.a` |
 | Port | `8193` |
 | RPC Port | `8194` |
 
