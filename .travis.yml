@@ -14,26 +14,21 @@ matrix:
         brew install boost@1.60; 
         brew link boost@1.60 -f; 
         brew upgrade wget;
-        wget -O protobuf.rb https://gist.githubusercontent.com/shlima/b64087606b2f7c9495fcb0bcb886b5be/raw/265e879f7971f80b4543f34179edaaaac3c08413/protobuf260.rb;
-        brew install ./protobuf.rb;
-        brew link protobuf -f;
+        wget -O protobuf260.rb https://gist.githubusercontent.com/shlima/b64087606b2f7c9495fcb0bcb886b5be/raw/265e879f7971f80b4543f34179edaaaac3c08413/protobuf260.rb;
+        brew install ./protobuf260.rb;
+        brew link protobuf260 -f;
         brew install libqrencode
         brew link qrencode
         wget -O qt.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/a57d0deab976cd8dee32404abe73f63cc5fbd60d/Formula/qt.rb;
         brew install ./qt.rb;
         brew link qt -f; 
         echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> /Users/travis/.bash_profile
-        brew install libqrencode; 
         git clone https://github.com/mattneub/appscript.git;
         cd appscript/py-appscript/tags/py-appscript-1.0.0/;
         sudo python2.7 setup.py install;
         cd  ${TRAVIS_BUILD_DIR};
-        wget -O miniupnpc.tar.gz http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz;
-        tar xvzf miniupnpc.tar.gz; 
-        mv miniupnpc-1.9.20150206 miniupnpc; 
-        cd miniupnpc; 
-        make -f Makefile upnpc-static; 
-        sudo INSTALLPREFIX=/usr/local make install; 
+        wget -O miniupnpc.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/miniupnpc.rb 
+        brew install ./miniupnpc.rb
     install: 
         cd  ${TRAVIS_BUILD_DIR};
         chmod 755 src/leveldb/build_detect_platform;
