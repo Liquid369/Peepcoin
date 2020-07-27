@@ -33,8 +33,9 @@ matrix:
         cd  ${TRAVIS_BUILD_DIR};
         chmod 755 src/leveldb/build_detect_platform;
         qmake RELEASE=1 USE_UPNP=- USE_QRCODE=1 Peepcoin-qt.pro;
-    script: make;
+    script: 
         export QTDIR=/usr/local/Cellar/qt/5.13.2;
+        make;
         cd  ${TRAVIS_BUILD_DIR};
         chmod -R 755 contrib;
         echo "Before dmg packaging";
