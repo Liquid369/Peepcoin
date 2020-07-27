@@ -10,7 +10,7 @@ matrix:
     before_install:
         brew install git; 
         brew install berkeley-db4;
-        brew install openssl; 
+        brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/8b9d6d688f483a0f33fcfc93d433de501b9c3513/Formula/openssl.rb;
         brew install boost@1.60; 
         brew link boost@1.60 -f; 
         brew upgrade wget;
