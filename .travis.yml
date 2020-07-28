@@ -17,12 +17,12 @@ matrix:
         wget -O protobuf260.rb https://gist.githubusercontent.com/shlima/b64087606b2f7c9495fcb0bcb886b5be/raw/265e879f7971f80b4543f34179edaaaac3c08413/protobuf260.rb;
         brew install ./protobuf260.rb;
         brew link protobuf260 -f;
-        brew install libqrencode
-        brew link qrencode
         wget -O qt.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/a57d0deab976cd8dee32404abe73f63cc5fbd60d/Formula/qt.rb;
         brew install ./qt.rb;
         brew link qt -f; 
         echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> /Users/travis/.bash_profile
+        brew install libqrencode
+        brew link qrencode
         git clone https://github.com/mattneub/appscript.git;
         cd appscript/py-appscript/tags/py-appscript-1.0.0/;
         sudo python2.7 setup.py install;
