@@ -41,7 +41,7 @@ matrix:
         cd  ${TRAVIS_BUILD_DIR};
         chmod -R 755 contrib;
         echo "Before dmg packaging";
-        T=$(contrib/qt_translations.py $QTDIR/translations src/qt/locale);
+        T=$(python2.7 contrib/qt_translations.py $QTDIR/translations src/qt/locale);
         python2.7 contrib/macdeploy/macdeployqtplus -dmg -fancy contrib/macdeploy/fancy.plist Peepcoin-Qt.app  -add-qt-tr $T;
         ls -ltr;
         echo "DMG file";
