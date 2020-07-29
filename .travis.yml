@@ -42,7 +42,7 @@ matrix:
         chmod -R 755 contrib;
         echo "Before dmg packaging";
         T=$(contrib/qt_translations.py $QTDIR/translations src/qt/locale);
-        python2.7 contrib/macdeploy/macdeployqtplus  -add-qt-tr $T -dmg -fancy contrib/macdeploy/fancy.plist Peepcoin-Qt.app;
+        python2.7 contrib/macdeploy/macdeployqtplus -dmg -fancy contrib/macdeploy/fancy.plist Peepcoin-Qt.app  -add-qt-tr $T;
         ls -ltr;
         echo "DMG file";
   
